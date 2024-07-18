@@ -9,13 +9,16 @@ function chunkString(str, chunkLength) {
 
     // Loop through the string, slicing chunks of the specified length
     for (let i = 0; i < str.length; i += chunkLength) {
-        chunks.push(str.slice(i, i + chunkLength));
+        chunks.push(str.substring(i, i + chunkLength));
     }
 
     // Return the array of chunks
     return chunks;
 }
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+
+// Test cases
+console.log(chunkString("Hello, world!", 5)); // Output: ["Hello", ", wor", "ld!"]
+console.log(chunkString("12345", 2));         // Output: ["12", "34", "5"]
+console.log(chunkString("abc", 5));           // Output: ["abc"]
+console.log(chunkString(null, 3));            // Output: []
+
